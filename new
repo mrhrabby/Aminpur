@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=780, initial-scale=1.0">
+<title>আমার গিটহাব সাইট</title>
+
+<!-- SolaimanLipi Font -->
+<link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'SolaimanLipi', sans-serif;
+    background: #f5f5f5;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #111;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* Hero */
+.hero {
+    margin-top: 70px;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* Container */
+.container {
+    padding: 20px;
+}
+
+/* Grid */
+.posts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* Post Card */
+.post {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.post h3 {
+    margin-top: 0;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .posts {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>আমার ব্লগ সাইট</h2>
+</header>
+
+<section class="hero">
+    <h1>স্বাগতম আমার গিটহাব পেইজে</h1>
+    <p>এখানে আপনি বিভিন্ন পোস্ট দেখতে পারবেন</p>
+</section>
+
+<div class="container">
+    <div class="posts" id="postContainer">
+        <!-- Posts will load here -->
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 আমার সাইট | সকল অধিকার সংরক্ষিত</p>
+</footer>
+
+<script>
+// Example posts (GitHub Pages থেকে replace করতে পারো)
+const posts = [
+    { title: "পোস্ট ১", content: "এটি একটি ডেমো পোস্ট। বিস্তারিত দেখতে ক্লিক করুন।" },
+    { title: "পোস্ট ২", content: "এটি দ্বিতীয় পোস্ট। GitHub Pages থেকে ডাটা আনতে পারো।" },
+    { title: "পোস্ট ৩", content: "এটি তৃতীয় পোস্ট। JSON ব্যবহার করতে পারো।" },
+    { title: "পোস্ট ৪", content: "এটি চতুর্থ পোস্ট। সুন্দর ডিজাইন।" }
+];
+
+const container = document.getElementById("postContainer");
+
+posts.forEach(post => {
+    const div = document.createElement("div");
+    div.className = "post";
+    div.innerHTML = `
+        <h3>${post.title}</h3>
+        <p>${post.content}</p>
+        <a href="#">বিস্তারিত পড়ুন</a>
+    `;
+    container.appendChild(div);
+});
+</script>
+
+</body>
+</html>
