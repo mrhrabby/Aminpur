@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমাদের গ্রাম | তথ্য ও ঐতিহ্য</title>
+    
+    <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+
+    <style>
+        /* CSS Variables for easy color changes */
+        :root {
+            --primary-green: #2d5a27;
+            --light-green: #eef5ee;
+            --text-dark: #333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SolaimanLipi', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fcfdfc;
+        }
+
+        /* Layout */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1588613254911-30d855a90104?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 4vw, 1.4rem);
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-green);
+            font-size: 2.2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-green);
+            margin: 10px auto;
+        }
+
+        /* Grid System */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            border-bottom: 4px solid var(--primary-green);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .info-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: var(--primary-green);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer strong {
+            color: var(--white);
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            section { padding: 40px 0; }
+            .hero { height: 50vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <h1>আমাদের গ্রাম ডিজিটাল পোর্টাল</h1>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h2>স্বাগতম আমাদের গ্রামে</h2>
+        <p>বাংলার শাশ্বত রূপ ও ঐতিহ্যের মিলনস্থল</p>
+    </div>
+
+    <section class="container">
+        <h2 class="section-title">গ্রামের পরিচিতি</h2>
+        <div style="text-align: center; max-width: 850px; margin: auto; font-size: 1.1rem;">
+            <p>আমাদের গ্রাম তার প্রাকৃতিক সৌন্দর্য এবং ভ্রাতৃত্ববোধের জন্য পরিচিত। এখানে শিক্ষার আলো ঘরে ঘরে পৌঁছে দিতে কাজ করছে বিভিন্ন শিক্ষা প্রতিষ্ঠান। এই পেজটির উদ্দেশ্য হলো গ্রামের সব তথ্য এক জায়গায় নিয়ে আসা।</p>
+        </div>
+    </section>
+
+    <section style="background-color: var(--light-green);">
+        <div class="container">
+            <h2 class="section-title">প্রয়োজনীয় তথ্যসমূহ</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>শিক্ষা</h3>
+                    <p>গ্রামে রয়েছে সমৃদ্ধ প্রাথমিক ও মাধ্যমিক শিক্ষা ব্যবস্থা।</p>
+                </div>
+                <div class="info-card">
+                    <h3>যোগাযোগ</h3>
+                    <p>শহরের সাথে উন্নত সড়ক ও নিয়মিত পরিবহন সুবিধা রয়েছে।</p>
+                </div>
+                <div class="info-card">
+                    <h3>ঐতিহ্য</h3>
+                    <p>পুরানো স্থাপত্য এবং আমাদের লোকজ মেলা গ্রামের গৌরব।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <strong>আমাদের গ্রাম প্রজেক্ট ২০২৬</strong>
+            <p>গ্রামের উন্নয়নের লক্ষ্যে একটি ডিজিটাল উদ্যোগ।</p>
+            <div style="margin-top: 20px; font-size: 0.9rem; border-top: 1px solid #333; padding-top: 20px;">
+                কপিরাইট &copy; ২০২৬ | আপনার নাম দ্বারা তৈরিকৃত
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
