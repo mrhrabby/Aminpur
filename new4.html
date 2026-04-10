@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমার গ্রাম - প্রকৃতির স্বর্গ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #2d5a27;
+            --light-green: #e8f5e9;
+            --accent: #fbc02d;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1589400213192-334360e65089?auto=format&fit=crop&w=1200&q=80'); /* এখানে আপনার গ্রামের ছবি দিতে পারেন */
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-text h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero-text p { font-size: 1.2rem; opacity: 0.9; }
+
+        /* Content Sections */
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .section { margin-bottom: 40px; }
+        h2 { border-bottom: 3px solid var(--primary-green); display: inline-block; padding-bottom: 5px; color: var(--primary-green); }
+
+        /* Cards for Mobile */
+        .info-card {
+            background: var(--light-green);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 15px;
+            border-left: 5px solid var(--primary-green);
+        }
+
+        /* Responsive Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* Mobile specific adjustments */
+        @media (max-width: 600px) {
+            .hero-text h1 { font-size: 1.8rem; }
+            .hero-text p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="hero-text">
+        <h1>আমাদের গ্রাম - [গ্রামের নাম লিখুন]</h1>
+        <p>সবুজ শ্যামল এক শান্তির নীড়</p>
+    </div>
+</header>
+
+<div class="container">
+    <section class="section">
+        <h2>গ্রামের সংক্ষিপ্ত পরিচয়</h2>
+        <p>আমাদের গ্রামটি [জেলার নাম] জেলার [উপজেলার নাম] উপজেলায় অবস্থিত। চারদিকে সবুজ ফসলের মাঠ আর আঁকাবাঁকা নদী আমাদের গ্রামকে এক অনন্য রূপ দিয়েছে। এখানে হিন্দু-মুসলিম নির্বিশেষে সবাই মিলেমিশে বসবাস করে।</p>
+    </section>
+
+    <section class="section">
+        <h2>দর্শনীয় স্থানসমূহ</h2>
+        <div class="info-card">
+            <strong>১. বকুল তলা:</strong> গ্রামের প্রাণকেন্দ্র, যেখানে বিকেলে সবাই আড্ডা দেয়।
+        </div>
+        <div class="info-card">
+            <strong>২. নদীর পাড়:</strong> সূর্যাস্ত দেখার জন্য সবচেয়ে সুন্দর জায়গা।
+        </div>
+        <div class="info-card">
+            <strong>৩. পুরোনো জমিদার বাড়ি:</strong> আমাদের গ্রামের ইতিহাসের সাক্ষী।
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>গ্রামের বিশেষ ঐতিহ্য</h2>
+        <ul>
+            <li>নবান্ন উৎসব</li>
+            <li>বৈশাখী মেলা</li>
+            <li>শীতের পিঠা ও খেজুর রস</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2>ফটো গ্যালারি</h2>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/200x150?text=Green+Field" alt="মাঠ">
+            <img src="https://via.placeholder.com/200x150?text=RiverSide" alt="নদী">
+            <img src="https://via.placeholder.com/200x150?text=Sunset" alt="সূর্যাস্ত">
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>স্বাগতম আমাদের গ্রামে | © ২০২৬</p>
+</footer>
+
+</body>
+</html>
