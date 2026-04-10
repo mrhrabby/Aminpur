@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>আমিনপুর থানা অনলাইন তথ্য সেবা</title>
+    <title>আমিনপুর থানা তথ্য সেবা</title>
     
     <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
     
@@ -12,193 +12,253 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'SolaimanLipi', sans-serif;
         }
 
         body {
-            font-family: 'SolaimanLipi', sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
+            background-color: #f8f9fa;
+            padding-bottom: 70px; /* Space for bottom nav */
         }
 
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+        /* Top Header */
+        .top-header {
+            background: linear-gradient(to right, #002366, #004011);
             color: white;
-            padding: 25px 0;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .top-header .logo-icon {
+            position: absolute;
+            left: 15px;
+            font-size: 24px;
+        }
+
+        .top-header h1 {
+            font-size: 20px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            line-height: 1.2;
         }
 
-        .logo-text {
-            font-size: 28px;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        .top-header .menu-icon {
+            position: absolute;
+            right: 15px;
+            font-size: 24px;
         }
 
-        /* Hero Banner */
-        .hero {
-            background: #fff;
-            margin: 15px;
-            padding: 20px;
+        /* Banner/Slider Area */
+        .banner {
+            margin: 10px;
+            background: white;
             border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-left: 5px solid #ff4757;
+            padding: 15px;
         }
 
-        .hero h1 {
-            color: #2f3542;
-            font-size: 22px;
-            margin-bottom: 5px;
+        .banner img {
+            width: 100%;
+            border-radius: 10px;
         }
 
-        /* Container */
+        .banner h2 {
+            font-size: 18px;
+            color: #004011;
+            margin: 10px 0 5px;
+        }
+
+        .banner p {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Grid Section */
         .container {
-            padding: 10px 15px 40px 15px;
+            padding: 10px;
         }
 
-        /* Vibrant Category Grid */
         .grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
         }
 
         .card {
-            background: white;
-            border-radius: 20px;
-            padding: 25px 15px;
-            text-align: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            border-radius: 15px;
+            padding: 15px 10px;
+            color: white;
+            text-align: left;
             position: relative;
-            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-decoration: none;
         }
 
-        .card:active {
-            transform: scale(0.95);
-        }
-
-        .card i {
-            font-size: 45px;
-            margin-bottom: 12px;
+        .card .icon {
+            font-size: 24px;
+            margin-bottom: 5px;
+            display: block;
         }
 
         .card h3 {
-            font-size: 18px;
-            color: white;
+            font-size: 16px;
+            margin-bottom: 3px;
+        }
+
+        .card p {
+            font-size: 10px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .card .btn-more {
+            background: white;
+            color: #333;
+            font-size: 10px;
+            padding: 3px 12px;
+            border-radius: 20px;
+            display: inline-block;
             font-weight: bold;
         }
 
-        /* Custom Colors for Categories */
-        .card.emergency { background: linear-gradient(135deg, #ff4757, #ff6b81); }
-        .card.education { background: linear-gradient(135deg, #1e90ff, #3742fa); }
-        .card.tourism { background: linear-gradient(135deg, #2ed573, #7bed9f); }
-        .card.police { background: linear-gradient(135deg, #2f3542, #57606f); }
-        .card.hospital { background: linear-gradient(135deg, #ff6b81, #ef5777); }
-        .card.government { background: linear-gradient(135deg, #ffa502, #ff7f50); }
-        .card.market { background: linear-gradient(135deg, #70a1ff, #1e90ff); }
-        .card.contact { background: linear-gradient(135deg, #a29bfe, #6c5ce7); }
+        /* Card Colors */
+        .red { background-color: #ff3b30; }
+        .blue { background-color: #007aff; }
+        .teal { background-color: #008080; }
+        .navy { background-color: #1c1c3c; }
+        .pink { background-color: #e91e63; }
+        .orange { background-color: #ff9500; }
+        .green { background-color: #28a745; }
+        .purple { background-color: #af52de; }
 
-        /* Icon styling */
-        .card-icon {
-            font-size: 40px;
-            margin-bottom: 10px;
-            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2));
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
         }
 
-        /* Responsive - Mobile View (2 Columns) */
-        @media (max-width: 768px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-            }
-            .logo-text {
-                font-size: 22px;
-            }
-            .card {
-                padding: 20px 10px;
-            }
-            .card h3 {
-                font-size: 16px;
-            }
-        }
-
-        footer {
+        .nav-item {
             text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            color: #747d8c;
-            background: #fff;
-            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        .nav-item.active {
+            color: #002366;
+        }
+
+        .nav-item span {
+            display: block;
+            font-size: 20px;
+        }
+
+        /* Desktop view adjustment */
+        @media (min-width: 768px) {
+            .grid { grid-template-columns: repeat(4, 1fr); }
+            body { max-width: 500px; margin: 0 auto; border: 1px solid #ddd; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo-text">আমিনপুর থানা তথ্য সেবা</div>
-    </header>
+    <div class="top-header">
+        <span class="logo-icon">🏛️</span>
+        <h1>আমিনপুর থানা<br><span style="font-size: 14px; font-weight: normal;">তথ্য সেবা</span></h1>
+        <span class="menu-icon">☰</span>
+    </div>
 
-    <div class="hero">
-        <h1>আপনার সেবায় আমিনপুর</h1>
-        <p style="color: #57606f; font-size: 14px;">সব তথ্য এখন এক নজরে</p>
+    <div class="banner">
+        <img src="https://via.placeholder.com/400x150/e8f5e9/2e7d32?text=Aminpur+Banner" alt="Banner">
+        <h2>আপনার সেবায় আমিনপুর</h2>
+        <p>সব তথ্য এক নজরে</p>
     </div>
 
     <div class="container">
         <div class="grid">
-            
-            <a href="#" class="card emergency">
-                <span class="card-icon">🚑</span>
+            <a href="#" class="card red">
+                <span class="icon">🚑</span>
                 <h3>জরুরী সেবা</h3>
+                <p>জরুরী রক্ত ও সেবা পেতে এখানে ক্লিক করুন</p>
+                <span class="btn-more">বিস্তারিত</span>
             </a>
 
-            <a href="#" class="card education">
-                <span class="card-icon">🎓</span>
+            <a href="#" class="card blue">
+                <span class="icon">🎓</span>
                 <h3>শিক্ষা প্রতিষ্ঠান</h3>
+                <p>শিক্ষা প্রতিষ্ঠানের তালিকা ও বিস্তারিত তথ্যাবলি</p>
+                <span class="btn-more">বিস্তারিত</span>
             </a>
 
-            <a href="#" class="card tourism">
-                <span class="card-icon">🏞️</span>
-                <h3>দর্শনীয় স্থান</h3>
+            <a href="#" class="card teal">
+                <span class="icon">🗺️</span>
+                <h3>আমিনপুর ম্যাপ</h3>
+                <p>আমিনপুর থানা এলাকার ডিজিটাল ম্যাপ</p>
+                <span class="btn-more">বিস্তারিত</span>
             </a>
 
-            <a href="#" class="card police">
-                <span class="card-icon">👮</span>
+            <a href="#" class="card navy">
+                <span class="icon">👮</span>
                 <h3>পুলিশ স্টেশন</h3>
+                <p>পুলিশ সেবার জন্য কন্টাক্ট নম্বর ও ঠিকানা</p>
+                <span class="btn-more">বিস্তারিত</span>
             </a>
 
-            <a href="#" class="card hospital">
-                <span class="card-icon">🏥</span>
+            <a href="#" class="card pink">
+                <span class="icon">🏥</span>
                 <h3>হাসপাতাল</h3>
+                <p>নিকটস্থ সরকারি ও বেসরকারি হাসপাতাল</p>
+                <span class="btn-more">বিস্তারিত</span>
             </a>
 
-            <a href="#" class="card government">
-                <span class="card-icon">🏛️</span>
-                <h3>ইউনিয়ন পরিষদ</h3>
+            <a href="#" class="card orange">
+                <span class="icon">🏛️</span>
+                <h3>ইউনিয়ন পরিষদ</h3>
+                <p>ইউনিয়ন ভিত্তিক সেবা ও তথ্যাবলি</p>
+                <span class="btn-more">বিস্তারিত</span>
             </a>
 
-            <a href="#" class="card market">
-                <span class="card-icon">🛒</span>
-                <h3>বাজার-ঘাট</h3>
+            <a href="#" class="card green">
+                <span class="icon">🌳</span>
+                <h3>দর্শনীয় স্থান</h3>
+                <p>ঘুরার জন্য সেরা সব পর্যটন কেন্দ্র</p>
+                <span class="btn-more">বিস্তারিত</span>
             </a>
 
-            <a href="#" class="card contact">
-                <span class="card-icon">📞</span>
+            <a href="#" class="card purple">
+                <span class="icon">📞</span>
                 <h3>যোগাযোগ</h3>
+                <p>প্রশাসন ও জরুরি প্রয়োজনে কন্টাক্ট</p>
+                <span class="btn-more">বিস্তারিত</span>
             </a>
-
         </div>
     </div>
 
-    <footer>
-        <p>&copy; ২০২৬ আমিনপুর থানা ডিজিটাল সার্ভিস</p>
-    </footer>
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item">
+            <span>🏠</span> হোম
+        </a>
+        <a href="#" class="nav-item active">
+            <span>📂</span> ক্যাটাগরি
+        </a>
+        <a href="#" class="nav-item">
+            <span>📰</span> খবর
+        </a>
+        <a href="#" class="nav-item">
+            <span>⚙️</span> সেটিংস
+        </a>
+    </nav>
 
 </body>
 </html>
