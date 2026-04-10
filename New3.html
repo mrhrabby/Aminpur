@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>আমার নিউজ পোর্টাল | প্রফেশনাল রেসপন্সিভ সাইট</title>
+    <meta name="description" content="সবশেষ খবর ও পোস্ট পড়ুন আমাদের পোর্টালে।">
+    <meta property="og:title" content="আমার নিউজ পোর্টাল">
+    <meta property="og:description" content="বাংলায় আপডেট সব তথ্য।">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1504711432869-5d39a110fdd7"> 
+    <meta property="og:type" content="website">
+
+    <link href="https://fonts.mateen.me/solaiman-lipi/font.css" rel="stylesheet">
+
+    <style>
+        /* CSS Section */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'SolaimanLipi', sans-serif;
+            background-color: #f9f9f9;
+            color: #222;
+            line-height: 1.6;
+            direction: ltr;
+        }
+
+        .container { max-width: 1200px; margin: auto; padding: 0 15px; }
+
+        header { background: #fff; padding: 15px 0; border-bottom: 3px solid #e74c3c; position: sticky; top: 0; z-index: 100; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .logo { color: #e74c3c; font-size: 28px; font-weight: bold; }
+        .logo span { color: #333; }
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: bold; }
+
+        /* Hero Slider */
+        .hero-slider { width: 100%; height: 450px; overflow: hidden; position: relative; background: #eee; }
+        .slide { display: none; width: 100%; height: 100%; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; }
+        .fade { animation: fadeAnim 1.5s; }
+        @keyframes fadeAnim { from {opacity: .4} to {opacity: 1} }
+
+        .section-title { margin: 30px 0; padding-left: 15px; border-left: 5px solid #e74c3c; font-size: 24px; text-align: left; }
+
+        /* Post Grid */
+        .post-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .post-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: 0.3s; }
+        .post-card:hover { transform: translateY(-5px); }
+        .post-card img { width: 100%; height: 200px; object-fit: cover; }
+        .post-info { padding: 15px; text-align: left; }
+        .badge { background: #e74c3c; color: #fff; padding: 3px 10px; border-radius: 5px; font-size: 12px; }
+        .post-info h3 { font-size: 18px; margin: 10px 0; }
+        .post-info h3 a { text-decoration: none; color: #333; }
+        .meta { font-size: 12px; color: #888; }
+
+        /* Mobile Responsive: 2 Columns */
+        @media (max-width: 768px) {
+            .post-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .hero-slider { height: 250px; }
+            .nav-links { display: none; }
+            .post-info h3 { font-size: 15px; }
+            .post-card img { height: 140px; }
+        }
+
+        footer { background: #333; color: #fff; text-align: center; padding: 25px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <h1 class="logo">নিউজ<span>২৪</span></h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">হোম</a></li>
+                    <li><a href="#">জাতীয়</a></li>
+                    <li><a href="#">আন্তর্জাতিক</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-slider">
+        <div class="slide fade"><img src="https://images.unsplash.com/photo-1504711432869-5d39a110fdd7?w=1200" alt="Slide 1"></div>
+        <div class="slide fade"><img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?w=1200" alt="Slide 2"></div>
+        <div class="slide fade"><img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200" alt="Slide 3"></div>
+        <div class="slide fade"><img src="https://images.unsplash.com/photo-1476242906366-d8eb64c2f661?w=1200" alt="Slide 4"></div>
+        <div class="slide fade"><img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1200" alt="Slide 5"></div>
+    </section>
+
+    <main class="container">
+        <h2 class="section-title">সর্বশেষ আপডেট</h2>
+        <div class="post-grid">
+            
+            <article class="post-card">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500" alt="Tech">
+                <div class="post-info">
+                    <span class="badge">প্রযুক্তি</span>
+                    <h3><a href="#">এআই প্রযুক্তির নতুন দিগন্ত ও বাংলাদেশ</a></h3>
+                    <p class="meta">১০ এপ্রিল ২০২৬ | ০২:৩০ অপরাহ্ণ</p>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=500" alt="Travel">
+                <div class="post-info">
+                    <span class="badge">ভ্রমণ</span>
+                    <h3><a href="#">সাজেক ভ্যালিতে মেঘের সাথে কাটানো এক দিন</a></h3>
+                    <p class="meta">১০ এপ্রিল ২০২৬ | ০১:১৫ অপরাহ্ণ</p>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?w=500" alt="News">
+                <div class="post-info">
+                    <span class="badge">জাতীয়</span>
+                    <h3><a href="#">দেশের অর্থনীতিতে নতুন গতির সঞ্চার</a></h3>
+                    <p class="meta">১০ এপ্রিল ২০২৬ | ১২:০০ অপরাহ্ণ</p>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; ২০২৬ আপনার নাম | গিটহাব পেইজে হোস্টকৃত</p>
+    </footer>
+
+    <script>
+        /* JavaScript Section */
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3500); 
+        }
+    </script>
+</body>
+</html>
