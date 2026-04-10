@@ -2,110 +2,124 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=780">
-    <title>ডেমো বাংলা ওয়েবসাইট</title>
-<link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"/>
-    <meta name="google-site-verification" content="XHqCwz1GixffYylFSwBzG1dxdx6B6-zlbgcYn6bk3p4" />
-    <!-- SolaimanLipi Font -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমার গ্রাম - তথ্য কেন্দ্র</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        
-        body {
-            font-family: 'SolaimanLipi', sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background: #f5f5f5;
         }
 
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #f0f2f5;
+            padding-top: 70px; /* ফিক্সড হেডারের জন্য উপরের খালি জায়গা */
+        }
+
+        /* ১. ফিক্সড হেডার ডিজাইন */
         header {
-            background: #006a4e;
+            background-color: #1a5e20;
             color: white;
-            padding: 20px;
-            text-align: center;
+            height: 60px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
-        nav {
-            background: #004d3a;
-            padding: 10px;
-            text-align: center;
+        header h1 {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
         }
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
+        /* কন্টেইনার */
         .container {
-            padding: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 15px;
         }
 
-        .card {
+        /* ২. টু কলাম বক্স লেআউট */
+        .row {
+            display: flex;
+            flex-wrap: wrap; /* মোবাইলে নিচে নামার জন্য */
+            gap: 20px;
+        }
+
+        .column {
+            flex: 1;
+            min-width: 300px; /* কলামের সর্বনিম্ন প্রস্থ */
             background: white;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        footer {
-            background: #006a4e;
-            color: white;
-            text-align: center;
-            padding: 10px;
+        .column h2 {
+            color: #1a5e20;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .column p {
+            line-height: 1.8;
+            color: #444;
+        }
+
+        /* মোবাইল রেসপন্সিভ অ্যাডজাস্টমেন্ট */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+            
+            .column {
+                flex: 100%; /* মোবাইলে কলাম পুরো জায়গা নিবে */
+            }
+            
+            body {
+                padding-top: 60px;
+            }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>আমাদের ডেমো ওয়েবসাইট</h1>
-    <p>বাংলা ভাষার একটি সাধারণ HTML ডেমো</p>
-</header>
+    <header>
+        <h1>আমাদের গ্রামের ডায়েরি</h1>
+    </header>
 
-<nav>
-    <a href="#">হোম</a>
-    <a href="new4">নতুন</a>
-    <a href="new3">আমাদের সম্পর্কে</a>
-    <a href="new2">সেবা</a>
-    <a href="new">যোগাযোগ</a>
-    <a href="game">Game</a>
-</nav>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <h2>গ্রামের ইতিহাস</h2>
+                <p>আমাদের গ্রামটি একটি প্রাচীন এবং ঐতিহ্যবাহী জনপদ। শত বছরের পুরনো বটগাছ আর রূপালী নদী এই গ্রামের ইতিহাসের সাক্ষী হয়ে আছে। প্রজন্মের পর প্রজন্ম ধরে আমরা এখানে ভ্রাতৃত্বের সাথে বসবাস করে আসছি।</p>
+            </div>
 
-<div class="container">
+            <div class="column">
+                <h2>যোগাযোগ ব্যবস্থা</h2>
+                <p>শহর থেকে আমাদের গ্রামে আসার পথটি বেশ চমৎকার। মসৃণ পিচ ঢালা রাস্তার দুপাশে সবুজ বনানী আপনাকে স্বাগত জানাবে। বর্তমানে মোবাইল নেটওয়ার্ক এবং বিদ্যুৎ সুবিধা গ্রামে জীবনযাত্রাকে অনেক সহজ করে তুলেছে।</p>
+            </div>
+        </div>
 
-    <div class="card">
-        <h2>স্বাগতম!</h2>
-        <p>
-            এটি একটি ডেমো ওয়েবসাইট যা সম্পূর্ণ বাংলা ভাষায় তৈরি করা হয়েছে।
-            এখানে SolaimanLipi ফন্ট ব্যবহার করা হয়েছে।
-        </p>
+        <div class="row" style="margin-top: 20px;">
+            <div class="column">
+                <h2>শিক্ষা ও সংস্কৃতি</h2>
+                <p>গ্রামে দুটি সরকারি প্রাথমিক বিদ্যালয় এবং একটি হাই স্কুল রয়েছে। প্রতি বছর বৈশাখী মেলা এবং নবান্ন উৎসবে পুরো গ্রাম উৎসবে মেতে ওঠে।</p>
+            </div>
+            <div class="column">
+                <h2>প্রাকৃতিক সম্পদ</h2>
+                <p>ফসলের মাঠ, মাছের ঘের এবং ফলমূলের বাগান আমাদের গ্রামের প্রধান সম্পদ। এখানকার টাটকা শাকসবজি এবং ফলমূলের খ্যাতি জেলাজুড়ে বিস্তৃত।</p>
+            </div>
+        </div>
     </div>
-
-    <div class="card">
-        <h2>আমাদের সেবা</h2>
-        <ul>
-            <li>ওয়েব ডিজাইন</li>
-            <li>অ্যাপ ডেভেলপমেন্ট</li>
-            <li>ডিজিটাল মার্কেটিং</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>যোগাযোগ করুন</h2>
-        <p>ইমেইল: example@email.com</p>
-        <p>ফোন: 0123456789</p>
-    </div>
-
-</div>
-
-<footer>
-    <p>© ২০২৬ - সকল অধিকার সংরক্ষিত</p>
-</footer>
 
 </body>
 </html>
