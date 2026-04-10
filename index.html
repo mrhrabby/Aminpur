@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>আমার গ্রাম - প্রফেশনাল হেডার</title>
-    <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"/>
+    <title>আমিনপুর থানা | আমিনপুরের সকল তথ্য</title>
+    
+    <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+    
     <style>
-        /* ১. গ্লোবাল রিসেট এবং ফন্ট */
+        /* CSS অংশ */
         * {
             margin: 0;
             padding: 0;
@@ -14,96 +16,79 @@
         }
 
         body {
-            font-family: 'SolaimanLipi', sans-serif;
+            font-family: 'SolaimanLipi', Arial, sans-serif;
             background-color: #f8f9fa;
-            /* হেডার ফিক্সড থাকায় কন্টেন্ট যেন নিচে না ঢাকা পড়ে তাই প্যাডিং */
-            padding-top: 80px; 
+            padding-top: 80px; /* হেডার ফিক্সড বলে কন্টেন্ট নিচে নামানোর জন্য */
             line-height: 1.6;
         }
 
-        /* ২. ফিক্সড হেডার ডিজাইন */
+        /* ফিক্সড হেডার ডিজাইন */
         .fixed-header {
             background-color: #ffffff;
             height: 70px;
             width: 100%;
-            position: fixed; /* স্ক্রল করলেও উপরে থাকবে */
+            position: fixed;
             top: 0;
             left: 0;
             display: flex;
             align-items: center;
+            justify-content: center; /* লোগোকে মাঝখানে রাখার মূল কমান্ড */
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
         }
 
-        .container {
-            display: flex;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* ৩. লোগো মাঝখানে রাখার টেকনিক (Flex: 1) */
-        .menu-left, .menu-right {
-            flex: 1; /* বাম ও ডান অংশকে সমান জায়গা দিবে */
-            display: flex;
-        }
-
-        .menu-right {
-            justify-content: flex-end; /* ডান পাশের লিংক ডানে রাখবে */
-        }
-
         .logo {
-            flex: 1; /* লোগো মাঝখানের পুরো অংশ নিবে */
+            font-size: 28px;
+            font-weight: bold;
+            color: #2e7d32;
+            text-decoration: none;
+        }
+
+        /* কন্টেন্ট এরিয়া */
+        .main-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
             text-align: center;
-            font-size: 24px;
-            font-weight: 700;
-            color: #2e7d32;
-            text-decoration: none;
         }
 
-        /* ৪. লিংকের স্টাইল */
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 600;
-            transition: color 0.3s;
+        .card-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 20px;
         }
 
-        nav a:hover {
-            color: #2e7d32;
-        }
-
-        /* ৫. মোবাইল রেসপন্সিভ (পেইজটি ছোট হলে কেমন দেখাবে) */
+        /* মোবাইল রেসপন্সিভ */
         @media (max-width: 600px) {
             .logo {
-                font-size: 18px;
-            }
-            nav a {
-                font-size: 14px;
-            }
-            .container {
-                padding: 0 10px;
+                font-size: 22px;
             }
             .fixed-header {
                 height: 60px;
             }
-        }
-
-        /* ৬. ডামি কন্টেন্ট (পেইজ স্ক্রল করে দেখার জন্য) */
-        .content {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            min-height: 1200px; /* স্ক্রলিং টেস্ট করার জন্য বেশি হাইট */
+            body {
+                padding-top: 70px;
+            }
         }
     </style>
 </head>
 <body>
+
+    <header class="fixed-header">
+        <a href="#" class="logo">আমিনপুর থানা</a>
+    </header>
+
+    <main class="main-container">
+        <div class="card-box">
+            <h1>স্বাগতম আমাদের গ্রামে</h1>
+            <p>এই পেজটি এখন সলাইমান লিপি ফন্টে সাজানো এবং হেডারটি সব সময় মাঝখানে ফিক্সড থাকবে। আপনি চাইলে নিচে আরও অনেক কন্টেন্ট যোগ করতে পারেন।</p>
+        </div>
+    </main>
+
+</body>
+</html>
 
     <header class="fixed-header">
         <nav class="container">
