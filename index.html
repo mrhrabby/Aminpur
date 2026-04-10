@@ -3,107 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>গ্রামের তথ্য - ২ কলাম মোবাইল ভিউ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
+    <title>আমার গ্রাম - প্রফেশনাল হেডার</title>
+    <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"/>
     <style>
+        /* ১. গ্লোবাল রিসেট এবং ফন্ট */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Hind Siliguri', sans-serif;
-            background-color: #f4f7f6;
-            padding-top: 70px; /* হেডার ফিক্সড থাকায় বডির প্যাডিং */
+            font-family: 'SolaimanLipi', sans-serif;
+            background-color: #f8f9fa;
+            /* হেডার ফিক্সড থাকায় কন্টেন্ট যেন নিচে না ঢাকা পড়ে তাই প্যাডিং */
+            padding-top: 80px; 
+            line-height: 1.6;
         }
 
-        /* ফিক্সড হেডার */
-        header {
-            background-color: #2e7d32;
-            color: white;
-            height: 60px;
+        /* ২. ফিক্সড হেডার ডিজাইন */
+        .fixed-header {
+            background-color: #ffffff;
+            height: 70px;
             width: 100%;
-            position: fixed;
+            position: fixed; /* স্ক্রল করলেও উপরে থাকবে */
             top: 0;
             left: 0;
             display: flex;
             align-items: center;
-            justify-content: center;
-            z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        header h1 {
-            font-size: 1.3rem;
+            z-index: 1000;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 15px auto;
-            padding: 0 10px;
-        }
-
-        /* ২ কলাম লেআউট - মোবাইলেও কার্যকর */
-        .row {
             display: flex;
-            gap: 10px; /* বক্সের মাঝখানের ফাঁকা অংশ */
-            margin-bottom: 10px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .column {
-            flex: 1; /* ২ কলাম সমানভাবে ভাগ হবে */
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border: 1px solid #ddd;
+        /* ৩. লোগো মাঝখানে রাখার টেকনিক (Flex: 1) */
+        .menu-left, .menu-right {
+            flex: 1; /* বাম ও ডান অংশকে সমান জায়গা দিবে */
+            display: flex;
         }
 
-        .column h2 {
+        .menu-right {
+            justify-content: flex-end; /* ডান পাশের লিংক ডানে রাখবে */
+        }
+
+        .logo {
+            flex: 1; /* লোগো মাঝখানের পুরো অংশ নিবে */
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
             color: #2e7d32;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
+            text-decoration: none;
         }
 
-        .column p {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            color: #555;
+        /* ৪. লিংকের স্টাইল */
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
         }
 
-        /* মোবাইল অপ্টিমাইজেশন */
+        nav a:hover {
+            color: #2e7d32;
+        }
+
+        /* ৫. মোবাইল রেসপন্সিভ (পেইজটি ছোট হলে কেমন দেখাবে) */
         @media (max-width: 600px) {
+            .logo {
+                font-size: 18px;
+            }
+            nav a {
+                font-size: 14px;
+            }
             .container {
-                padding: 0 5px;
+                padding: 0 10px;
             }
-            .column {
-                padding: 10px; /* মোবাইলে জায়গা বাঁচাতে প্যাডিং কম */
+            .fixed-header {
+                height: 60px;
             }
-            .column h2 {
-                font-size: 1rem;
-            }
-            .column p {
-                font-size: 0.85rem; /* ছোট স্ক্রিনে ফন্ট কিছুটা ছোট */
-            }
+        }
+
+        /* ৬. ডামি কন্টেন্ট (পেইজ স্ক্রল করে দেখার জন্য) */
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            min-height: 1200px; /* স্ক্রলিং টেস্ট করার জন্য বেশি হাইট */
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>আমাদের গ্রামের তথ্যচিত্র</h1>
+    <header class="fixed-header">
+        <nav class="container">
+            <div class="menu-left">
+                <a href="#">হোম</a>
+            </div>
+
+            <a href="#" class="logo">আমিনপুর থানা</a>
+
+            <div class="menu-right">
+                <a href="#">যোগাযোগ</a>
+            </div>
+        </nav>
     </header>
 
-    <div class="container">
-        <div class="row">
-            <div class="column">
-                <h2>ইতিহাস</h2>
-                <p>আমাদের গ্রামটি মোগল আমলের ঐতিহ্যে ঘেরা এক প্রাচীন জনপদ।</p>
-            </div>
-            <div class="column">
+    <main class="content">
+        <h2>আমাদের গ্রামের রূপকথা</h2>
+        <p>হেডারটি এখন ফিক্সড করা আছে। আপনি মাউস দিয়ে স্ক্রল করে নিচে নামলে দেখবেন হেডারটি নিজের জায়গায় স্থির হয়ে আছে।</p>
+        <p style="margin-top: 20px;">এটি পুরোপুরি মোবাইল ফ্রেন্ডলি। মোবাইলে ওপেন করলে লোগো এবং লিংকগুলো ছোট হয়ে মানিয়ে নেবে।</p>
+    </main>
+
+</body>
+</html>
                 <h2>প্রকৃতি</h2>
                 <p>সবুজ শ্যামল বন আর এঁকেবেঁকে চলা নদী এই গ্রামের মূল সৌন্দর্য।</p>
             </div>
