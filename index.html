@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>আমার গ্রাম - তথ্য কেন্দ্র</title>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>গ্রামের তথ্য - ২ কলাম মোবাইল ভিউ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -14,13 +14,13 @@
 
         body {
             font-family: 'Hind Siliguri', sans-serif;
-            background-color: #f0f2f5;
-            padding-top: 70px; /* ফিক্সড হেডারের জন্য উপরের খালি জায়গা */
+            background-color: #f4f7f6;
+            padding-top: 70px; /* হেডার ফিক্সড থাকায় বডির প্যাডিং */
         }
 
-        /* ১. ফিক্সড হেডার ডিজাইন */
+        /* ফিক্সড হেডার */
         header {
-            background-color: #1a5e20;
+            background-color: #2e7d32;
             color: white;
             height: 60px;
             width: 100%;
@@ -31,61 +31,62 @@
             align-items: center;
             justify-content: center;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         header h1 {
-            font-size: 1.5rem;
-            letter-spacing: 1px;
+            font-size: 1.3rem;
         }
 
-        /* কন্টেইনার */
         .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 0 15px;
+            max-width: 1200px;
+            margin: 15px auto;
+            padding: 0 10px;
         }
 
-        /* ২. টু কলাম বক্স লেআউট */
+        /* ২ কলাম লেআউট - মোবাইলেও কার্যকর */
         .row {
             display: flex;
-            flex-wrap: wrap; /* মোবাইলে নিচে নামার জন্য */
-            gap: 20px;
+            gap: 10px; /* বক্সের মাঝখানের ফাঁকা অংশ */
+            margin-bottom: 10px;
         }
 
         .column {
-            flex: 1;
-            min-width: 300px; /* কলামের সর্বনিম্ন প্রস্থ */
+            flex: 1; /* ২ কলাম সমানভাবে ভাগ হবে */
             background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid #ddd;
         }
 
         .column h2 {
-            color: #1a5e20;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
+            color: #2e7d32;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
         }
 
         .column p {
-            line-height: 1.8;
-            color: #444;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #555;
         }
 
-        /* মোবাইল রেসপন্সিভ অ্যাডজাস্টমেন্ট */
+        /* মোবাইল অপ্টিমাইজেশন */
         @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.2rem;
+            .container {
+                padding: 0 5px;
             }
-            
             .column {
-                flex: 100%; /* মোবাইলে কলাম পুরো জায়গা নিবে */
+                padding: 10px; /* মোবাইলে জায়গা বাঁচাতে প্যাডিং কম */
             }
-            
-            body {
-                padding-top: 60px;
+            .column h2 {
+                font-size: 1rem;
+            }
+            .column p {
+                font-size: 0.85rem; /* ছোট স্ক্রিনে ফন্ট কিছুটা ছোট */
             }
         }
     </style>
@@ -93,17 +94,35 @@
 <body>
 
     <header>
-        <h1>আমাদের গ্রামের ডায়েরি</h1>
+        <h1>আমাদের গ্রামের তথ্যচিত্র</h1>
     </header>
 
     <div class="container">
         <div class="row">
             <div class="column">
-                <h2>গ্রামের ইতিহাস</h2>
-                <p>আমাদের গ্রামটি একটি প্রাচীন এবং ঐতিহ্যবাহী জনপদ। শত বছরের পুরনো বটগাছ আর রূপালী নদী এই গ্রামের ইতিহাসের সাক্ষী হয়ে আছে। প্রজন্মের পর প্রজন্ম ধরে আমরা এখানে ভ্রাতৃত্বের সাথে বসবাস করে আসছি।</p>
+                <h2>ইতিহাস</h2>
+                <p>আমাদের গ্রামটি মোগল আমলের ঐতিহ্যে ঘেরা এক প্রাচীন জনপদ।</p>
             </div>
-
             <div class="column">
+                <h2>প্রকৃতি</h2>
+                <p>সবুজ শ্যামল বন আর এঁকেবেঁকে চলা নদী এই গ্রামের মূল সৌন্দর্য।</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <h2>শিক্ষা</h2>
+                <p>গ্রামে রয়েছে উন্নত মানের স্কুল ও লাইব্রেরি সুবিধা।</p>
+            </div>
+            <div class="column">
+                <h2>উৎসব</h2>
+                <p>বারো মাসে তেরো পার্বণ আর মেলায় মেতে থাকে পুরো গ্রাম।</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
                 <h2>যোগাযোগ ব্যবস্থা</h2>
                 <p>শহর থেকে আমাদের গ্রামে আসার পথটি বেশ চমৎকার। মসৃণ পিচ ঢালা রাস্তার দুপাশে সবুজ বনানী আপনাকে স্বাগত জানাবে। বর্তমানে মোবাইল নেটওয়ার্ক এবং বিদ্যুৎ সুবিধা গ্রামে জীবনযাত্রাকে অনেক সহজ করে তুলেছে।</p>
             </div>
