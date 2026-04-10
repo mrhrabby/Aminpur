@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>আমিনপুর থানা তথ্য সেবা</title>
     
+    <title>আমিনপুর থানা তথ্য সেবা - জরুরি সেবা ও তথ্যাবলি</title>
+    <meta name="description" content="আমিনপুর থানার সকল জরুরি সেবা, শিক্ষা প্রতিষ্ঠান, এবং দর্শনীয় স্থানের তথ্য এক ঠিকানায়।">
+    <meta name="keywords" content="আমিনপুর থানা, আমিনপুর তথ্য সেবা, জরুরি সেবা আমিনপুর, Aminpur Thana Service">
+    
+    <meta property="og:title" content="আমিনপুর থানা তথ্য সেবা">
+    <meta property="og:description" content="হাতের মুঠোয় আমিনপুরের সকল তথ্য।">
+    <meta property="og:image" content="https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bangladesh/2026/2/84ddb941-9701-4474-9f98-24d594f35003.png">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+
     <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
     
     <style>
@@ -16,67 +25,65 @@
         }
 
         body {
-            background-color: #f8f9fa;
-            padding-bottom: 70px; /* Space for bottom nav */
+            background-color: #f4f6f9;
+            padding-top: 60px; /* Fixed header gap */
         }
 
-        /* Top Header */
+        /* Fixed Slim Header */
         .top-header {
             background: linear-gradient(to right, #002366, #004011);
             color: white;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .top-header .logo-icon {
-            position: absolute;
-            left: 15px;
-            font-size: 24px;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         .top-header h1 {
-            font-size: 20px;
-            text-align: center;
-            line-height: 1.2;
-        }
-
-        .top-header .menu-icon {
-            position: absolute;
-            right: 15px;
-            font-size: 24px;
-        }
-
-        /* Banner/Slider Area */
-        .banner {
-            margin: 10px;
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            text-align: center;
-            padding: 15px;
-        }
-
-        .banner img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .banner h2 {
             font-size: 18px;
-            color: #004011;
-            margin: 10px 0 5px;
+            font-weight: bold;
+            line-height: 1.1;
         }
 
-        .banner p {
-            font-size: 12px;
-            color: #666;
+        /* Hero Slider Section */
+        .slider-container {
+            margin: 10px;
+            position: relative;
+            max-width: 100%;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* Grid Section */
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            background: white;
+            margin: 0 10px 15px;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .hero-text h2 { font-size: 18px; color: #004011; }
+        .hero-text p { font-size: 13px; color: #666; }
+
+        /* Grid Layout */
         .container {
             padding: 10px;
         }
@@ -89,176 +96,160 @@
 
         .card {
             border-radius: 15px;
-            padding: 15px 10px;
+            padding: 15px 12px;
             color: white;
-            text-align: left;
-            position: relative;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
         }
 
-        .card .icon {
-            font-size: 24px;
-            margin-bottom: 5px;
-            display: block;
-        }
+        .card:active { transform: scale(0.95); }
 
-        .card h3 {
-            font-size: 16px;
-            margin-bottom: 3px;
-        }
-
-        .card p {
-            font-size: 10px;
-            opacity: 0.9;
-            margin-bottom: 10px;
-            line-height: 1.2;
-        }
-
-        .card .btn-more {
-            background: white;
+        .card .icon { font-size: 26px; margin-bottom: 5px; display: block; }
+        .card h3 { font-size: 16px; margin-bottom: 5px; }
+        .card p { font-size: 10px; opacity: 0.9; line-height: 1.3; margin-bottom: 8px;}
+        
+        .btn-more {
+            background: rgba(255,255,255,0.9);
             color: #333;
             font-size: 10px;
-            padding: 3px 12px;
+            padding: 3px 10px;
             border-radius: 20px;
-            display: inline-block;
             font-weight: bold;
         }
 
-        /* Card Colors */
-        .red { background-color: #ff3b30; }
-        .blue { background-color: #007aff; }
-        .teal { background-color: #008080; }
-        .navy { background-color: #1c1c3c; }
-        .pink { background-color: #e91e63; }
-        .orange { background-color: #ff9500; }
-        .green { background-color: #28a745; }
-        .purple { background-color: #af52de; }
+        /* Vibrant Colors */
+        .red { background: linear-gradient(135deg, #ff4757, #ff6b81); }
+        .blue { background: linear-gradient(135deg, #1e90ff, #3742fa); }
+        .teal { background: linear-gradient(135deg, #008080, #1abc9c); }
+        .navy { background: linear-gradient(135deg, #2c3e50, #34495e); }
+        .pink { background: linear-gradient(135deg, #e91e63, #ff4081); }
+        .orange { background: linear-gradient(135deg, #ff9f43, #ee5253); }
+        .green { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+        .purple { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
 
-        /* Bottom Navigation */
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-        }
-
-        .nav-item {
+        /* Simple Footer */
+        footer {
+            background: #fff;
+            color: #555;
             text-align: center;
-            color: #666;
-            font-size: 12px;
-            text-decoration: none;
+            padding: 20px 10px;
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 13px;
         }
 
-        .nav-item.active {
-            color: #002366;
-        }
-
-        .nav-item span {
-            display: block;
-            font-size: 20px;
-        }
-
-        /* Desktop view adjustment */
         @media (min-width: 768px) {
             .grid { grid-template-columns: repeat(4, 1fr); }
-            body { max-width: 500px; margin: 0 auto; border: 1px solid #ddd; }
+            body { max-width: 600px; margin: 0 auto; border: 1px solid #ddd; padding-top: 55px; }
+            .top-header { max-width: 600px; left: 50%; transform: translateX(-50%); }
         }
     </style>
 </head>
 <body>
 
-    <div class="top-header">
-        
-        <h1>আমিনপুর থানা<br><span style="font-size: 14px; font-weight: normal;">তথ্য সেবা</span></h1>
-        
+    <header class="top-header">
+        <h1>আমিনপুর থানা তথ্য সেবা</h1>
+    </header>
+
+    <div class="slider-container">
+        <div class="slide fade">
+            <img src="https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bangladesh/2026/2/84ddb941-9701-4474-9f98-24d594f35003.png" alt="আমিনপুর থানা স্লাইড ১">
+        </div>
+        <div class="slide fade">
+            <img src="https://via.placeholder.com/600x250/004011/ffffff?text=আমিনপুর+থানা+২" alt="আমিনপুর থানা স্লাইড ২">
+        </div>
+        <div class="slide fade">
+            <img src="https://via.placeholder.com/600x250/002366/ffffff?text=ডিজিটাল+সেবা" alt="স্লাইড ৩">
+        </div>
     </div>
 
-    <div class="banner">
-        <img src="https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bangladesh/2026/2/84ddb941-9701-4474-9f98-24d594f35003.png" alt="Banner">
-        <h2>আমিনপুর থানা</h2>
-        <p>হাতের মুঠোয় আমিনপুরের তথ্য</p></p>
+    <div class="hero-text">
+        <h2>আমিনপুর থানা তথ্য বাতায়ন</h2>
+        <p>হাতের মুঠোয় আপনার প্রয়োজনীয় সকল তথ্য</p>
     </div>
 
-    <div class="container">
+    <main class="container">
         <div class="grid">
             <a href="#" class="card red">
                 <span class="icon">🚑</span>
                 <h3>জরুরী সেবা</h3>
-                <p>জরুরী রক্ত ও সেবা পেতে এখানে ক্লিক করুন</p>
+                <p>রক্ত ও ফায়ার সার্ভিস</p>
                 <span class="btn-more">বিস্তারিত</span>
             </a>
 
             <a href="#" class="card blue">
                 <span class="icon">🎓</span>
                 <h3>শিক্ষা প্রতিষ্ঠান</h3>
-                <p>শিক্ষা প্রতিষ্ঠানের তালিকা ও বিস্তারিত তথ্যাবলি</p>
+                <p>স্কুল ও কলেজের তথ্য</p>
                 <span class="btn-more">বিস্তারিত</span>
             </a>
 
             <a href="#" class="card teal">
                 <span class="icon">🗺️</span>
                 <h3>আমিনপুর ম্যাপ</h3>
-                <p>আমিনপুর থানা এলাকার ডিজিটাল ম্যাপ</p>
+                <p>ডিজিটাল ম্যাপ দেখুন</p>
                 <span class="btn-more">বিস্তারিত</span>
             </a>
 
             <a href="#" class="card navy">
                 <span class="icon">👮</span>
                 <h3>পুলিশ স্টেশন</h3>
-                <p>পুলিশ সেবার জন্য কন্টাক্ট নম্বর ও ঠিকানা</p>
+                <p>থানার কন্টাক্ট নম্বর</p>
                 <span class="btn-more">বিস্তারিত</span>
             </a>
 
             <a href="#" class="card pink">
                 <span class="icon">🏥</span>
                 <h3>হাসপাতাল</h3>
-                <p>নিকটস্থ সরকারি ও বেসরকারি হাসপাতাল</p>
+                <p>মেডিকেল সেবা সমূহ</p>
                 <span class="btn-more">বিস্তারিত</span>
             </a>
 
             <a href="#" class="card orange">
                 <span class="icon">🏛️</span>
-                <h3>ইউনিয়ন পরিষদ</h3>
-                <p>ইউনিয়ন ভিত্তিক সেবা ও তথ্যাবলি</p>
+                <h3>ইউনিয়ন পরিষদ</h3>
+                <p>নাগরিক সেবা ও সনদ</p>
                 <span class="btn-more">বিস্তারিত</span>
             </a>
 
             <a href="#" class="card green">
                 <span class="icon">🌳</span>
                 <h3>দর্শনীয় স্থান</h3>
-                <p>ঘুরার জন্য সেরা সব পর্যটন কেন্দ্র</p>
+                <p>ভ্রমণ ও পর্যটন তথ্য</p>
                 <span class="btn-more">বিস্তারিত</span>
             </a>
 
             <a href="#" class="card purple">
                 <span class="icon">📞</span>
                 <h3>যোগাযোগ</h3>
-                <p>প্রশাসন ও জরুরি প্রয়োজনে কন্টাক্ট</p>
+                <p>প্রয়োজনীয় কন্টাক্ট</p>
                 <span class="btn-more">বিস্তারিত</span>
             </a>
         </div>
-    </div>
+    </main>
 
-    <nav class="bottom-nav">
-        <a href="#" class="nav-item">
-            <span>🏠</span> হোম
-        </a>
-        <a href="#" class="nav-item active">
-            <span>📂</span> ক্যাটাগরি
-        </a>
-        <a href="#" class="nav-item">
-            <span>📰</span> খবর
-        </a>
-        <a href="#" class="nav-item">
-            <span>⚙️</span> সেটিংস
-        </a>
-    </nav>
+    <footer>
+        <p>সার্বিক তত্ত্বাবধানে: আমিনপুর থানা প্রশাসন</p>
+        <p style="margin-top: 5px; opacity: 0.8;">&copy; ২০২৬ | সর্বস্বত্ব সংরক্ষিত</p>
+    </footer>
+
+    <script>
+        // Simple Slider Script
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+    </script>
 
 </body>
 </html>
