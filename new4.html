@@ -33,6 +33,37 @@
             text-align: center;
             color: white;
         }
+        /* Style for the button itself */
+.btn-pdf {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* This is where the magic happens for the PDF layout */
+@media print {
+  /* Hide elements you don't want in the PDF */
+  #download-pdf, .nav-menu, .footer-links {
+    display: none !important;
+  }
+
+  /* Force a clean, single-column layout for the PDF */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+  }
+
+  .container {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
 
         .hero-text h1 { font-size: 2.5rem; margin-bottom: 10px; }
         .hero-text p { font-size: 1.2rem; opacity: 0.9; }
@@ -93,6 +124,9 @@
         <p>সবুজ শ্যামল এক শান্তির নীড়</p>
     </div>
 </header>
+<button id="download-pdf" class="btn-pdf">
+  Download as PDF
+</button>
 
 <div class="container">
     <section class="section">
@@ -137,4 +171,21 @@
 </footer>
 
 </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+  document.getElementById('download-pdf').onclick = function () {
+    const element = document.body; // You can change this to a specific #id
+    const options = {
+      margin:       [10, 10, 10, 10],
+      filename:     'webpage-export.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2, useCORS: true },
+      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+
+    html2pdf().set(options).from(element).save();
+  };
+</script>
+
 </html>
